@@ -227,6 +227,8 @@
 (defn draw-state [state]
   (q/with-translation [(/ (q/width) 2) (/ (q/height) 2)]
     (draw-road-car state))
+  ;; take screenshot
+  (when (= (q/frame-count) 600) (q/save-frame "screenshot-####.jpg"))
   (draw-timer state)
   (draw-best-time state))
 
